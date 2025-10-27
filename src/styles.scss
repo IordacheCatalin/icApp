@@ -1,0 +1,22 @@
+body * {
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  overflow-x: hidden;
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+  padding-top: 0 !important;
+}
+
+html,
+body {
+  padding-top: 0 !important;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
+
+button {
+  transition: all 0.3s ease-in-out;
+}
+

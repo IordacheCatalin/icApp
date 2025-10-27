@@ -1,0 +1,8 @@
+<div *ngIf="message" class="alert-container dd-mobile" [ngClass]="customClass">
+  <div *ngIf="message" class="alert alert-dismissible fade show text-xlarge dd-mobile center-flex-justify"  [ngClass]="customClass"role="alert">
+    <div class="w-100-ic">{{ message }}</div>
+    <button *ngIf="!autoClose" type="button" id="closeAlert" class="btn-close-dd dd-mobile" [ngClass]="customClass" aria-label="Close" (click)="onCloseButtonClick()">
+      <i class="fa-regular fa-rectangle-xmark text-xxlarge dd-mobile"></i>
+    </button>
+  </div>
+</div>

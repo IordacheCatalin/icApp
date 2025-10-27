@@ -1,0 +1,386 @@
+﻿/* Typography Sizes */
+.title-xxxlarge64, .text-xxxlarge64 { font-size: 64px; }
+.title-xxxlarge60, .text-xxxlarge60 { font-size: 60px; }
+.title-xxxlarge55, .text-xxxlarge55 { font-size: 55px; }
+.title-xxxlarge52, .text-xxxlarge52 { font-size: 52px; }
+.title-xxxlarge50, .text-xxxlarge50 { font-size: 50px; /* font-size: clamp(30px, 1vw, 50px); */ }
+.title-xxxlarge45, .text-xxxlarge45 { font-size: 45px; /* font-size: clamp(28px, 1vw, 45px); */ }
+.title-xxxlarge42, .text-xxxlarge42 { font-size: 42px; }
+.title-xxxlarge40, .text-xxxlarge40 { font-size: 40px; }
+.title-xxxlarge, .text-xxxlarge { font-size: 38px; /* clamp(22px, 1vw, 38px); */ }
+.title-xxxlarge36, .text-xxxlarge36 { font-size: 36px; }
+.title-xxxlarge34, .text-xxxlarge34 { font-size: 34px; }
+.title-xxxlarge32, .text-xxxlarge32 { font-size: 32px; }
+.title-xxlarge, .text-xxlarge { font-size: 30px; }
+.title-xxlarge28, .text-xxlarge28 { font-size: 28px; /* clamp(18px, 1vw, 28px); */ }
+.title-xllarge, .text-xllarge { font-size: 26px; }
+.title-xlarge, .text-xlarge { font-size: 24px; /* clamp(16px, 1vw, 24px); */ }
+.title-large22, .text-large22 { font-size: 22px; /* clamp(18px, 1vw, 22px); */ }
+.title-large, .text-large { font-size: 20px; /* clamp(16px, 1vw, 20px); */ }
+.title-regular, .text-regular { font-size: 18px !important; /* clamp(14px, 1vw, 18px); */ }
+.title-small, .text-small { font-size: 16px; }
+.title-xsmall, .text-xsmall { font-size: 14px; }
+.title-xxsmall, .text-xxsmall { font-size: 12px; }
+.title-xxxsmall, .text-xxxsmall { font-size: 10px; }
+
+/* Font Weight */
+.title-xxxlarge60, .title-xxxlarge55, .title-xxxlarge52, .title-xxxlarge50,
+.title-xxxlarge45, .title-xxxlarge42, .title-xxxlarge40, .title-xxxlarge36,
+.title-xxxlarge34, .title-xxxlarge32, .title-xxxlarge, .title-xxlarge,
+.title-xxlarge28, .title-xlarge, .title-xllarge, .title-large22,
+.title-large, .title-regular, .title-small, .title-xsmall,
+.title-xxsmall, .title-xxxsmall {
+  font-weight: 700;
+}
+
+.text-xxxlarge60, .text-xxxlarge55, .text-xxxlarge52, .text-xxxlarge50,
+.text-xxxlarge45, .text-xxxlarge42, .text-xxxlarge40, .text-xxxlarge36,
+.text-xxxlarge34, .text-xxxlarge32, .text-xxxlarge, .text-xxlarge,
+.text-xxlarge28, .text-xlarge, .text-xllarge, .text-large22,
+.text-large, .text-regular, .text-small, .text-xsmall,
+.text-xxsmall, .text-xxxsmall {
+  font-weight: 400;
+}
+
+/* Hover Decoration */
+.title-xxxlarge60:hover, .title-xxxlarge55:hover, .title-xxxlarge52:hover,
+.title-xxxlarge50:hover, .title-xxxlarge45:hover, .title-xxxlarge42:hover,
+.title-xxxlarge40:hover, .title-xxxlarge36:hover, .title-xxxlarge34:hover,
+.title-xxxlarge32:hover, .title-xxxlarge:hover, .title-xxlarge:hover,
+.title-xxlarge28:hover, .title-xlarge:hover, .title-large22:hover,
+.title-large:hover, .title-regular:hover, .title-small:hover,
+.title-xsmall:hover, .title-xxsmall:hover, .title-xxxsmall:hover {
+  text-decoration: none;
+}
+
+/* Theme Colors */
+.theme-1 {
+    --color-primary-project: #ffffff;
+    --color-secoundary-project: #fc2626;
+    --background-primary-project: radial-gradient(closest-side at 50% 50%, #538FF9 0%, #050110 100%);
+    --background-sidebar-primary-project: #4e86e926;
+    --background-designContainer-primary-project: transparent;
+    --border-primary-project: #2facff60;
+    --border-secondary-project: #ffffff;
+    --navItem-primary-project: radial-gradient(closest-side at 13% 11%, #18479BFC 0%, #060C17 1000%);
+    --navItem-active-primary-project: radial-gradient(closest-side at 13% 11%, #18479BFC 0%, #060C17 1000%);
+    --background-dropdown-primary-project: linear-gradient(103deg, #0488FC 0%, #2DDBF6 100%);
+    --buttons-border-primary-project: #ffffff;
+    --hide-elements-theme-1: none;
+    --hide-elements-theme-2: block;
+    --background-loginModal-primary-project: radial-gradient(closest-side at 13% 11%, #18479BFC 0%, #060C17 1000%);
+    --background-input-primary-project: #031e4f !important;
+    --border-color-input-primary-project: transparent !important;
+}
+
+.theme-2 {
+    --color-primary-project: #000000;
+    --color-secoundary-project: #EABE33;
+    --background-primary-project: linear-gradient(180deg, #FFFFFF 0%, #ECECEC 100%);
+    --background-sidebar-primary-project: #ffffff;
+    --background-designContainer-primary-project: #EFEFEF;
+    --border-primary-project: #9B9B9B;
+    --border-secondary-project: #9B9B9B;
+    --navItem-primary-project: #EFEFEF;
+    --navItem-active-primary-project: #bfbfbf;
+    --background-dropdown-primary-project: #ffffff;
+    --buttons-border-primary-project: #9B9B9B;
+    --hide-elements-theme-1: block;
+    --hide-elements-theme-2: none;
+    --background-loginModal-primary-project: #ffffff;
+    --background-input-primary-project: #ffffff !important;
+    --border-color-input-primary-project: #9B9B9B !important;
+}
+
+.theme-3 {
+    --color-primary-project: #ffffff;
+}
+
+.theme-4 {
+    --color-primary-project: #000000;
+}
+
+/* Font Colors */
+.color-black {
+    color: #000000 !important;
+}
+
+.color-white {
+    color: #ffffff !important;
+}
+
+.color-primary-project {
+    color: var(--color-primary-project);
+}
+
+.color-secondary-project {
+    color: var(--color-secoundary-project);
+}
+
+.color-third-project {
+    color: #2671fc;
+}
+
+.color-error-ic {
+    color: #cc0000;
+}
+
+/* Background */
+body {
+    background: var(--background-primary-project);
+}
+
+#sidebar {
+    background: var(--background-sidebar-primary-project);
+}
+
+/* Input Sizes */
+.gn-sm-width {
+    max-width: 140px !important;
+    width: 100%;
+}
+
+.gn-md-width {
+    max-width: 200px !important;
+    width: 100%;
+}
+
+.gn-std-width {
+    max-width: 250px !important;
+    width: 100%;
+}
+
+.gn-lg-width {
+    max-width: 400px !important;
+    width: 100%;
+}
+
+.gn-xxxlg-width {
+    max-width: 1000px !important;
+    width: 100%;
+}
+
+.gn-sm-height {
+    max-height: 20px !important;
+    height: 100%;
+}
+
+.gn-md-height {
+    max-height: 25px !important;
+    height: 100%;
+}
+
+.gn-std-height {
+    max-height: 30px !important;
+    height: 100%;
+}
+
+.gn-lg-height {
+    max-height: 40px !important;
+    height: 100%;
+}
+
+.gn-xxxlg-height {
+    max-height: 35px !important;
+    height: 100%;
+}
+
+/* Font Weights Utility */
+.wheight100 {
+    font-weight: 100;
+}
+
+.wheight200 {
+    font-weight: 200;
+}
+
+.wheight300 {
+    font-weight: 300;
+}
+
+.wheight400 {
+    font-weight: 400;
+}
+
+.wheight500 {
+    font-weight: 500;
+}
+
+.wheight600 {
+    font-weight: 600;
+}
+
+.wheight700 {
+    font-weight: 700;
+}
+
+.wheight800 {
+    font-weight: 800;
+}
+
+.wheight900 {
+    font-weight: 900;
+}
+
+/* Text Alignment */
+.text-justify-ic {
+    text-align: justify;
+}
+
+.text-center-ic {
+    text-align: center;
+}
+
+.text-start-ic {
+    text-align: start;
+}
+
+.text-end-ic {
+    text-align: end;
+}
+
+.text-italic-ic {
+    font-style: italic;
+}
+
+.text-no-wrap {
+    white-space: nowrap;
+}
+
+.text-decoration-none-ic {
+    text-decoration: none;
+}
+
+/* Flex Utilities */
+.margin-center {
+    margin: 0 auto;
+}
+
+.center-flex,
+.center-flex-align,
+.bottom-flex-align,
+.center-flex-justify,
+.center-flex-justify-between,
+.center-flex-justify-around,
+.end-flex-align {
+    display: flex;
+}
+
+.center-flex{
+     align-items: center; 
+     justify-content: center;
+}
+
+.center-flex-align {
+    align-items: center;
+}
+
+.bottom-flex-align {
+    align-items: end;
+}
+
+.center-flex-justify{
+    justify-content: center;
+}
+
+.center-flex-justify-between {
+    justify-content: space-between;
+}
+
+.center-flex-justify-around {
+    justify-content: space-around;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-no-wrap {
+    flex-wrap: nowrap;
+}
+
+.d-flex-ic {
+    display: flex;
+}
+
+.end-flex-align {
+    align-items: flex-end;
+}
+
+.w-100-ic {
+    width: 100%;
+}
+
+.m-w-100-ic {
+    max-width: 100%;
+}
+
+.m-w-90-ic {
+    max-width: 90%;
+}
+
+.m-w-80-ic {
+    max-width: 80%;
+}
+
+.m-w-70-ic {
+    max-width: 70%;
+}
+
+.m-w-60-ic {
+    max-width: 60%;
+}
+
+.m-w-50-ic {
+    max-width: 50%;
+}
+
+.h-100-ic {
+    height: 100%;
+}
+
+.m-h-100-ic {
+    max-height: 100%;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+/* Gaps */
+.gap10 {
+    gap: 10px;
+}
+
+.gap20 {
+    gap: 20px;
+}
+
+.gap25 {
+    gap: 25px;
+}
+
+.gap30 {
+    gap: 30px;
+}
+
+.gap50 {
+    gap: 50px;
+}
+
+.gap80 {
+    gap: 80px;
+}
+
+.gap100 {
+    gap: 100px;
+}
+
+/* Overflow */
+.hide-bigger {
+    overflow: hidden;
+}
