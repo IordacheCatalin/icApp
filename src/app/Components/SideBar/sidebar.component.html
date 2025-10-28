@@ -1,15 +1,14 @@
 <aside class="app-sidebar bg-dark text-white">
   <!-- Brand / App name + toggle (toggle mereu vizibil) -->
   <div class="sidebar-brand px-3 py-3 border-bottom border-secondary d-flex align-items-center justify-content-between">
-    <a class="text-white text-decoration-none fw-bold d-flex align-items-center gap-2 brand-link" routerLink="/" title="Acasă">
+    <a class="text-white text-decoration-none fw-bold d-flex align-items-center gap-2 brand-link" routerLink="/"
+      title="Acasă">
       <i class="fa-solid fa-cube"></i>
       <span class="label">Newto Dynamics</span>
     </a>
 
-    <button class="btn btn-sm btn-outline-light sidebar-toggle"
-            (click)="toggleSidebar()"
-            aria-label="Comută sidebar"
-            title="Deschide/închide">
+    <button class="btn btn-sm btn-outline-light sidebar-toggle" (click)="toggleSidebar()" aria-label="Comută sidebar"
+      title="Deschide/închide">
       <i class="fa-solid" [ngClass]="isCollapsed ? 'fa-angles-right' : 'fa-angles-left'"></i>
     </button>
   </div>
@@ -20,11 +19,13 @@
 
       <div class="px-3 text-uppercase text-secondary small mt-2 mb-1 section-title">General</div>
 
-      <a class="nav-link text-white px-3 d-flex align-items-center" routerLink="/dashboard" routerLinkActive="active" title="Dashboard">
+      <a class="nav-link text-white px-3 d-flex align-items-center" routerLink="/dashboard" routerLinkActive="active"
+        title="Dashboard">
         <i class="fa-solid fa-gauge me-2 icon"></i><span class="label">Dashboard</span>
       </a>
 
-      <a class="nav-link text-white px-3 d-flex align-items-center" routerLink="/reports" routerLinkActive="active" title="Rapoarte">
+      <a class="nav-link text-white px-3 d-flex align-items-center" routerLink="/reports" routerLinkActive="active"
+        title="Rapoarte">
         <i class="fa-solid fa-chart-line me-2 icon"></i><span class="label">Rapoarte</span>
       </a>
 
@@ -32,64 +33,83 @@
 
       <!-- Părinte + submenu: când e collapsed, ascundem doar label-ul; iconul rămâne -->
       <a class="nav-link text-white px-3 d-flex align-items-center justify-content-between parent-toggle"
-         data-bs-toggle="collapse" href="#menuUsers" role="button" aria-expanded="false" aria-controls="menuUsers" title="Utilizatori">
+        routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }" data-bs-toggle="collapse"
+        href="#menuUsers" role="button" aria-expanded="false" aria-controls="menuUsers" title="Utilizatori">
         <span class="d-flex align-items-center">
           <i class="fa-solid fa-users me-2 icon"></i><span class="label">Meniu 1</span>
         </span>
         <i class="fa-solid fa-chevron-down toggle-icon"></i>
       </a>
+
       <div class="collapse" id="menuUsers">
-        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/users/list" routerLinkActive="active" title="Listă">
+        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/users/list"
+          routerLinkActive="active" (click)="setActiveSub('users-list')"
+          [class.active-sub]="activeSubKey === 'users-list'" title="Listă">
           <i class="fa-solid fa-list me-2 icon"></i><span class="label">SubMenu 1</span>
         </a>
-        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/users/create" routerLinkActive="active" title="Adaugă">
+
+        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/users/create"
+          routerLinkActive="active" (click)="setActiveSub('users-create')"
+          [class.active-sub]="activeSubKey === 'users-create'" title="Adaugă">
           <i class="fa-solid fa-circle-plus me-2 icon"></i><span class="label">SubMenu 2</span>
-        </a>
-        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/users/roles" routerLinkActive="active" title="Roluri">
-          <i class="fa-solid fa-shield-halved me-2 icon"></i><span class="label">SubMenu 3</span>
         </a>
       </div>
 
+
       <a class="nav-link text-white px-3 d-flex align-items-center justify-content-between parent-toggle"
-         data-bs-toggle="collapse" href="#menuCatalog" role="button" aria-expanded="false" aria-controls="menuCatalog" title="Catalog">
+        data-bs-toggle="collapse" href="#menuCatalog" role="button" aria-expanded="false" aria-controls="menuCatalog"
+        title="Catalog">
         <span class="d-flex align-items-center">
           <i class="fa-solid fa-rectangle-list me-2 icon"></i><span class="label">Menu 2</span>
         </span>
         <i class="fa-solid fa-chevron-down toggle-icon"></i>
       </a>
       <div class="collapse" id="menuCatalog">
-        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/products" routerLinkActive="active" title="Produse">
+        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/products"
+          routerLinkActive="active" (click)="setActiveSub('catalog-products')"
+          [class.active-sub]="activeSubKey === 'catalog-products'">
           <i class="fa-solid fa-box-open me-2 icon"></i><span class="label">SubMenu 1</span>
         </a>
-        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/categories" routerLinkActive="active" title="Categorii">
+
+        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/categories"
+          routerLinkActive="active" (click)="setActiveSub('catalog-categories')"
+          [class.active-sub]="activeSubKey === 'catalog-categories'">
           <i class="fa-solid fa-tags me-2 icon"></i><span class="label">SubMenu 2</span>
         </a>
-        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/attributes" routerLinkActive="active" title="Atribute">
+
+        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/attributes"
+          routerLinkActive="active" (click)="setActiveSub('catalog-attributes')"
+          [class.active-sub]="activeSubKey === 'catalog-attributes'">
           <i class="fa-solid fa-sliders me-2 icon"></i><span class="label">SubMenu 3</span>
         </a>
       </div>
 
       <div class="px-3 text-uppercase text-secondary small mt-3 mb-1 section-title">Setări</div>
 
-      <a class="nav-link text-white px-3 d-flex align-items-center" routerLink="/profile" routerLinkActive="active" title="Profil">
+      <a class="nav-link text-white px-3 d-flex align-items-center" routerLink="/profile" routerLinkActive="active"
+        title="Profil">
         <i class="fa-solid fa-user-circle me-2 icon"></i><span class="label">Profil</span>
       </a>
 
       <a class="nav-link text-white px-3 d-flex align-items-center justify-content-between parent-toggle"
-         data-bs-toggle="collapse" href="#menuSettings" role="button" aria-expanded="false" aria-controls="menuSettings" title="Preferințe">
+        data-bs-toggle="collapse" href="#menuSettings" role="button" aria-expanded="false" aria-controls="menuSettings"
+        title="Preferințe">
         <span class="d-flex align-items-center">
           <i class="fa-solid fa-gear me-2 icon"></i><span class="label">Preferințe</span>
         </span>
         <i class="fa-solid fa-chevron-down toggle-icon"></i>
       </a>
       <div class="collapse" id="menuSettings">
-        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/settings/general" routerLinkActive="active" title="General">
+        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/settings/general"
+          routerLinkActive="active" title="General">
           <i class="fa-solid fa-sliders-h me-2 icon"></i><span class="label">General</span>
         </a>
-        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/settings/notifications" routerLinkActive="active" title="Notificări">
+        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/settings/notifications"
+          routerLinkActive="active" title="Notificări">
           <i class="fa-solid fa-bell me-2 icon"></i><span class="label">Notificări</span>
         </a>
-        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/settings/security" routerLinkActive="active" title="Securitate">
+        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/settings/security"
+          routerLinkActive="active" title="Securitate">
           <i class="fa-solid fa-shield me-2 icon"></i><span class="label">Securitate</span>
         </a>
       </div>
