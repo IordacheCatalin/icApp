@@ -1,0 +1,107 @@
+<aside class="app-sidebar bg-dark text-white">
+  <!-- Brand / App name + toggle (toggle mereu vizibil) -->
+  <div class="sidebar-brand px-3 py-3 border-bottom border-secondary d-flex align-items-center justify-content-between">
+    <a class="text-white text-decoration-none fw-bold d-flex align-items-center gap-2 brand-link" routerLink="/" title="Acasă">
+      <i class="fa-solid fa-cube"></i>
+      <span class="label">Newto Dynamics</span>
+    </a>
+
+    <button class="btn btn-sm btn-outline-light sidebar-toggle"
+            (click)="toggleSidebar()"
+            aria-label="Comută sidebar"
+            title="Deschide/închide">
+      <i class="fa-solid" [ngClass]="isCollapsed ? 'fa-angles-right' : 'fa-angles-left'"></i>
+    </button>
+  </div>
+
+  <!-- Scrollable menu -->
+  <div class="sidebar-scroll">
+    <nav class="nav flex-column py-2">
+
+      <div class="px-3 text-uppercase text-secondary small mt-2 mb-1 section-title">General</div>
+
+      <a class="nav-link text-white px-3 d-flex align-items-center" routerLink="/dashboard" routerLinkActive="active" title="Dashboard">
+        <i class="fa-solid fa-gauge me-2 icon"></i><span class="label">Dashboard</span>
+      </a>
+
+      <a class="nav-link text-white px-3 d-flex align-items-center" routerLink="/reports" routerLinkActive="active" title="Rapoarte">
+        <i class="fa-solid fa-chart-line me-2 icon"></i><span class="label">Rapoarte</span>
+      </a>
+
+      <div class="px-3 text-uppercase text-secondary small mt-3 mb-1 section-title">Management</div>
+
+      <!-- Părinte + submenu: când e collapsed, ascundem doar label-ul; iconul rămâne -->
+      <a class="nav-link text-white px-3 d-flex align-items-center justify-content-between parent-toggle"
+         data-bs-toggle="collapse" href="#menuUsers" role="button" aria-expanded="false" aria-controls="menuUsers" title="Utilizatori">
+        <span class="d-flex align-items-center">
+          <i class="fa-solid fa-users me-2 icon"></i><span class="label">Meniu 1</span>
+        </span>
+        <i class="fa-solid fa-chevron-down toggle-icon"></i>
+      </a>
+      <div class="collapse" id="menuUsers">
+        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/users/list" routerLinkActive="active" title="Listă">
+          <i class="fa-solid fa-list me-2 icon"></i><span class="label">SubMenu 1</span>
+        </a>
+        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/users/create" routerLinkActive="active" title="Adaugă">
+          <i class="fa-solid fa-circle-plus me-2 icon"></i><span class="label">SubMenu 2</span>
+        </a>
+        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/users/roles" routerLinkActive="active" title="Roluri">
+          <i class="fa-solid fa-shield-halved me-2 icon"></i><span class="label">SubMenu 3</span>
+        </a>
+      </div>
+
+      <a class="nav-link text-white px-3 d-flex align-items-center justify-content-between parent-toggle"
+         data-bs-toggle="collapse" href="#menuCatalog" role="button" aria-expanded="false" aria-controls="menuCatalog" title="Catalog">
+        <span class="d-flex align-items-center">
+          <i class="fa-solid fa-rectangle-list me-2 icon"></i><span class="label">Menu 2</span>
+        </span>
+        <i class="fa-solid fa-chevron-down toggle-icon"></i>
+      </a>
+      <div class="collapse" id="menuCatalog">
+        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/products" routerLinkActive="active" title="Produse">
+          <i class="fa-solid fa-box-open me-2 icon"></i><span class="label">SubMenu 1</span>
+        </a>
+        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/categories" routerLinkActive="active" title="Categorii">
+          <i class="fa-solid fa-tags me-2 icon"></i><span class="label">SubMenu 2</span>
+        </a>
+        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/attributes" routerLinkActive="active" title="Atribute">
+          <i class="fa-solid fa-sliders me-2 icon"></i><span class="label">SubMenu 3</span>
+        </a>
+      </div>
+
+      <div class="px-3 text-uppercase text-secondary small mt-3 mb-1 section-title">Setări</div>
+
+      <a class="nav-link text-white px-3 d-flex align-items-center" routerLink="/profile" routerLinkActive="active" title="Profil">
+        <i class="fa-solid fa-user-circle me-2 icon"></i><span class="label">Profil</span>
+      </a>
+
+      <a class="nav-link text-white px-3 d-flex align-items-center justify-content-between parent-toggle"
+         data-bs-toggle="collapse" href="#menuSettings" role="button" aria-expanded="false" aria-controls="menuSettings" title="Preferințe">
+        <span class="d-flex align-items-center">
+          <i class="fa-solid fa-gear me-2 icon"></i><span class="label">Preferințe</span>
+        </span>
+        <i class="fa-solid fa-chevron-down toggle-icon"></i>
+      </a>
+      <div class="collapse" id="menuSettings">
+        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/settings/general" routerLinkActive="active" title="General">
+          <i class="fa-solid fa-sliders-h me-2 icon"></i><span class="label">General</span>
+        </a>
+        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/settings/notifications" routerLinkActive="active" title="Notificări">
+          <i class="fa-solid fa-bell me-2 icon"></i><span class="label">Notificări</span>
+        </a>
+        <a class="nav-link sub px-4 text-white-50 d-flex align-items-center" routerLink="/settings/security" routerLinkActive="active" title="Securitate">
+          <i class="fa-solid fa-shield me-2 icon"></i><span class="label">Securitate</span>
+        </a>
+      </div>
+
+      <div class="px-3 text-uppercase text-secondary small mt-3 mb-1 section-title">Acțiuni</div>
+      <a class="nav-link text-white px-3 d-flex align-items-center" href="#" title="Reîmprospătează">
+        <i class="fa-solid fa-rotate me-2 icon"></i><span class="label">Reîmprospătează</span>
+      </a>
+      <a class="nav-link text-danger px-3 d-flex align-items-center" href="#" title="Logout">
+        <i class="fa-solid fa-right-from-bracket me-2 icon"></i><span class="label">Logout</span>
+      </a>
+
+    </nav>
+  </div>
+</aside>

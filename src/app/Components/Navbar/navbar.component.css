@@ -1,0 +1,16 @@
+.navbar-brand {
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  transition: all 0.2s ease;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: #ffc107 !important; /* accent galben */
+}
+
+.dropdown-menu {
+  min-width: 200px;
+}

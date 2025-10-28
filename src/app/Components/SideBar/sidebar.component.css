@@ -1,0 +1,85 @@
+/* Container + animație */
+:host .app-sidebar {
+  width: 260px;
+  min-height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  transition: width .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+
+/* Collapsed = îngust */
+:host(.collapsed) .app-sidebar { width: 72px; }
+
+/* Brand */
+.sidebar-brand {
+  background: rgba(255,255,255,.04);
+}
+.brand-link { display: flex; align-items: center; }
+
+/* Butonul rămâne vizibil mereu */
+.sidebar-toggle {
+  line-height: 1;
+  padding: .25rem .4rem;
+  min-width: 32px;             /* ușor de nimerit cu mouse-ul */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Scroll interior */
+.sidebar-scroll { overflow-y: auto; padding-bottom: 1rem; }
+
+/* Titluri secțiuni */
+.section-title { transition: opacity .15s ease; }
+:host(.collapsed) .section-title { opacity: 0; height: 0; overflow: hidden; padding: 0 .75rem; margin: 0; }
+
+/* Linkuri */
+.nav-link {
+  border-left: 3px solid transparent;
+  border-radius: 0;
+  padding-top: .55rem;
+  padding-bottom: .55rem;
+  transition: background .2s ease, color .2s ease, border-color .2s ease, padding .2s ease;
+}
+.nav-link:hover { background: rgba(255,255,255,.05); }
+.nav-link.active, .nav-link.active.sub {
+  color: #ffc107 !important;
+  border-left-color: #ffc107;
+  background: rgba(255,193,7,.10);
+}
+.nav-link.sub { font-size: .95rem; }
+
+/* Icon rotit pentru părinte la deschidere */
+.parent-toggle[aria-expanded="true"] .toggle-icon { transform: rotate(180deg); }
+.toggle-icon { transition: transform .2s ease; }
+
+/* Evidențiază parent când submeniul e deschis */
+.parent-toggle[aria-expanded="true"] {
+  color: #ffc107 !important;
+  border-left-color: #ffc107;
+  background: rgba(255,193,7,.10);
+}
+
+/* === MOD COLLAPSED === */
+/* Ascundem DOAR textul, nu și icon-urile / butoanele */
+.label { transition: opacity .15s ease, width .15s ease; }
+:host(.collapsed) .label { opacity: 0; width: 0; overflow: hidden; display: inline-block; }
+
+/* micșorăm paddingul; centrăm iconul */
+:host(.collapsed) .nav-link { padding-left: .75rem; padding-right: .75rem; }
+:host(.collapsed) .nav-link .icon { margin-right: 0 !important; }
+:host(.collapsed) .nav-link { justify-content: center; }
+
+/* ascundem chevron-urile la părinte în modul collapsed */
+:host(.collapsed) .parent-toggle .toggle-icon { display: none !important; }
+
+/* prefix sub-item indentat: menținem alinierea frumoasă */
+:host(.collapsed) .nav-link.sub { padding-left: .75rem; }
+
+/* Mobile: optional slide-out (dacă vrei) */
+@media (max-width: 991.98px) {
+  :host .app-sidebar { transform: translateX(0); box-shadow: 0 0 0 rgba(0,0,0,0); }
+  :host(.collapsed) .app-sidebar { transform: translateX(-100%); box-shadow: none; }
+}

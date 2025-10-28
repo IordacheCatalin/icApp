@@ -1,0 +1,14 @@
+/* Ajustează când sidebar-ul are ~260px lățime */
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-main {
+  background: #f8f9fa;
+}
+
+/* Conținut scrollabil independent de navbar/footer */
+.app-content {
+  padding: 1rem;
+  overflow: auto;
+}

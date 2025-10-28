@@ -17,7 +17,7 @@ export class Home implements OnInit {
 
 
   ngOnInit(): void {
-    this.alertService.showAlert('Plata nu a fost finalizată', 'custom-alert-error', true);
+    // this.alertService.showAlert('Plata nu a fost finalizată', 'custom-alert-error', true);
   }
 
 }
